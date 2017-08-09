@@ -12,4 +12,4 @@ The requirements for the python code are: numpy,scipy,matplotlib,pysces,stochpy
 
 --- as you see it is not finished --- if only we had one more day ---
 
-This is a project for the 2017 DBAthlon, IWBDA, Pittsburgh.
+This is a project by Iulia Gherman, James Scott-Brown and Margarita Kopniczky for the 2017 DBAthlon, IWBDA, Pittsburgh.
