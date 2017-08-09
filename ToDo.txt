@@ -1,0 +1,19 @@
+To do list for Ques 2
+
+Diff python files for:
+
+Blob generation function -> random (With a bias? Bias could be part of input). Return image file and dictionary for each blob.
+
+Play the game function -> takes parameters as input, whether stoch or determ, returns the list of coordinates for the plot that gets generated. Must be evenly spaced on xaxis
+
+
+Scoring function -> Obtain score by seeing if returned list of coordinates varies within a certain amount from blobs. Then plot the blobs (hit blobs in a different colour?) and simulation. 
+
+
+
+New game function - generate different blobs - reset button appear after a certain number of tries?
+
+
+generateblobs.py
+game.py
+score.py
