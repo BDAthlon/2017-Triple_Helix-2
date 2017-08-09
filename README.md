@@ -10,6 +10,17 @@ The parameters are given in an form and then the new values for the graph are ge
 The requirements for the python code are: numpy,scipy,matplotlib,pysces,stochpy
 
 
+Examples of plot:
+Glob plots
+![Alt text](/2017-Triple_Helix-2/BioBlobs/plot_blobs.png?raw=true "Hit the globs!")
+
+Stochastic simulations
+![Alt text](/2017-Triple_Helix-2/BioBlobs/stoch.png?raw=true "Optional Title")
+
+Deterministic simulations
+![Alt text](/2017-Triple_Helix-2/BioBlobs/determ.png?raw=true "Optional Title")
+
+
 --- as you see it is not finished --- if only we had one more day ---
 
 This is a project by Iulia Gherman, James Scott-Brown and Margarita Kopniczky for the 2017 DBAthlon, IWBDA, Pittsburgh.
