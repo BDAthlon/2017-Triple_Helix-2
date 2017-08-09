@@ -3,10 +3,6 @@ import matplotlib.pyplot as plt
 import os
 import csv
 
-def test(x, y):
-    z = x + y
-    return z
-
 def createblobs(bias):
     if bias:
         on_off_bias = random.choice([True, False])
@@ -24,24 +20,24 @@ def createblobs(bias):
     blob_dict = dict(zip(x_values,blob_values))
 
     blob_dict = zip(x_values,blob_values)
-    plot
-    plt.plot(x_values,blob_values,'go')
+    #plot
+    #plt.plot(x_values,blob_values,'go')
 #plt.xlabel('time')
-   plt.ylabel('expression levels')
-   plt.axis([0,55,0,max(blob_values)+5])
-   plt.savefig('plot_blobs.png')
+#   plt.ylabel('expression levels')
+#   plt.axis([0,55,0,max(blob_values)+5])
+#   plt.savefig('plot_blobs.png')
 
     #plot blob values as csv
-    wantdir = '/u1459894/Desktop/Desktop/Transferable_skills/Conferences/IWBDA_2017/BDathlon_2017/BDathlon17/tth-2/BioBlobs'
-    os.chdir(wantdir)
+    currentdir = os.getcwd()
+    os.chdir(currentdir)
     with open("blobvalues.csv","wb") as f:
         writer = csv.writer(f)
         writer.writerows(blob_dict)
     return blob_dict
 
-#bias = 0 #bias of 0 means blobs are randomly generated within range 0,300
+bias = 0 #bias of 0 means blobs are randomly generated within range 0,300
 # otherwise they are generated so all blobs have either a high or low value
-#blob_dict = createblobs(bias)
+blob_dict = createblobs(bias)
 #print blob_dict
 
 
