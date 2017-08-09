@@ -13,13 +13,16 @@ The requirements for the python code are: numpy,scipy,matplotlib,pysces,stochpy
 Examples of plot:
 
 Glob plots
+
 ![alt text](https://github.com/BDAthlon/2017-Triple_Helix-2/blob/master/BioBlobs/plot_blobs.png)
 
 
 Stochastic simulations
+
 ![alt text](https://github.com/BDAthlon/2017-Triple_Helix-2/blob/master/BioBlobs/stoch.png)
 
 Deterministic simulations
+
 ![alt text](https://github.com/BDAthlon/2017-Triple_Helix-2/blob/master/BioBlobs/determ.png)
 
 
