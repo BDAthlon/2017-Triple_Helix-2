@@ -11,8 +11,9 @@ The requirements for the python code are: numpy,scipy,matplotlib,pysces,stochpy
 
 
 Examples of plot:
+
 Glob plots
-![alt text](https://raw.github.com/iulia-gherman/BDAthlon/2017-Triple_Helix-2/2017-Triple_Helix-2/BioBlobs/plot_blobs.png)
+![alt text](https://raw.githubusercontent.com/iulia-gherman/BDAthlon/2017-Triple_Helix-2/2017-Triple_Helix-2/BioBlobs/plot_blobs.png)
 
 
 Stochastic simulations
