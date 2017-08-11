@@ -3,6 +3,11 @@ import matplotlib.pyplot as plt
 import os
 import csv
 
+def test(param1, param2):
+    result = param2 + param1
+    print result
+    return result
+
 def createblobs(bias):
     if bias:
         on_off_bias = random.choice([True, False])
