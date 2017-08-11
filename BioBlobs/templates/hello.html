@@ -2,7 +2,7 @@
 <head>
   <title>BioBlobs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="plotly-latest.min"></script>
   <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/sandstone/bootstrap.min.css" rel="stylesheet" integrity="sha384-G3G7OsJCbOk1USkOY4RfeX1z27YaWrZ1YuaQ5tbuawed9IoreRDpWpTkZLXQfPm3" crossorigin="anonymous">
 </head>
 
@@ -58,22 +58,26 @@
 	  <script>
 	 var mytrace1x = {{ trace1x|tojson }};
 	 var mytrace1y = {{ trace1y|tojson }};
+	 var mytrace2x = {{ trace2x|tojson }};
+	 var mytrace2y = {{ trace2y|tojson }};
+	 var mytrace3x = {{ trace3x|tojson }};
+	 var mytrace3y = {{ trace3y|tojson }};
 
 	 var trace1 = {
 	  x : mytrace1x,
-	  y: [10, 15, 13, 17],
+	  y : mytrace1y,
 	  mode: 'markers'
 	};
 
 	var trace2 = {
-	  x: [2, 3, 4, 5],
-	  y: [16, 5, 11, 10],
+	  x: mytrace2x,
+	  y: mytrace2y,
 	  mode: 'lines'
 	};
 
 	var trace3 = {
-	  x: [1, 2, 3, 4],
-	  y: [12, 9, 15, 12],
+	  x: mytrace3x,
+	  y: mytrace3y,
 	  mode: 'lines'
 	};
 

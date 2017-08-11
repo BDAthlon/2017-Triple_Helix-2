@@ -22,8 +22,8 @@ def hello():
 
 @app.route("/signup", methods=["POST"])
 def submittted():
-	trace1x= [1, 2, 3, 4]
-	trace1y= [1, 2, 3, 4]
+	trace1x= blobxy[0]
+	trace1y= blobxt[1]
 	trace2x=[]
 	trace2y=[]
 	trace3x=[]
