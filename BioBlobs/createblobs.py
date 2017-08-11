@@ -11,7 +11,7 @@ def test(param1, param2):
 def createblobs(bias):
     if bias:
         on_off_bias = random.choice([True, False])
-        if on_off_bias:
+        if on_off_bias: 
             how_many_on = random.randint(6,10)
         else:
             how_many_on = random.randint(1,5)
@@ -38,6 +38,7 @@ def createblobs(bias):
     with open("blobvalues.csv","wb") as f:
         writer = csv.writer(f)
         writer.writerows(blob_dict)
+    print(blob_dict)
     return blob_dict
 
 bias = 0 #bias of 0 means blobs are randomly generated within range 0,300

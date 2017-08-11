@@ -7,9 +7,12 @@ app = Flask("BioBlobs") #this is defininf our flak app
 
 @app.route("/")
 def hello():
+	blobs = createblobs.createblobs(0)
+	blobxy = zip(*blobs)
+	print blobxy
 	test = '0'
-	trace1x= [1, 2, 3, 4]
-	trace1y= [1, 2, 3, 4]
+	trace1x= blobxy[0]
+	trace1y= blobxy[1]
 	trace2x=[]
 	trace2y=[]
 	trace3x=[]
