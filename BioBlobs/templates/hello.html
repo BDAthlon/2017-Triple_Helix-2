@@ -9,7 +9,7 @@
 <body>
 <div class='jumbotron container text-center'>
 <h2>Kill the Blobs with the power of Biochemistry!</h2>
-<p> Load up the parameters and shoot! </p>
+<p> Load up the parameters and shoot! You got 5 attempts. </p>
 </div>
 
 <div class=container>
@@ -51,7 +51,7 @@
   		</form>
   <div class="col-sm-6">
   		  <div id="myDiv"><!-- Plotly chart will be drawn inside this DIV -->
-  		  	{{trace1x, trace1y, trace2x, trace2y, trace3x, trace3y}}
+  		  	{{trace1x, trace1y, trace2x, trace2y, trace3x, trace3y, trace4x, trace4y}}
   		  </div>
   </div>
   </div>
@@ -73,7 +73,7 @@
 	var trace2 = {
 	  x: mytrace2x,
 	  y: mytrace2y,
-	  mode: 'lines'
+	  mode: 'markers'
 	};
 
 	var trace3 = {
@@ -82,7 +82,13 @@
 	  mode: 'lines'
 	};
 
-	var data = [ trace1, trace2, trace3 ];
+	var trace4 = {
+	  x: mytrace3x,
+	  y: mytrace3y,
+	  mode: 'lines'
+	};
+
+	var data = [ trace1, trace2, trace3, trace4];
 
 	var layout = {
 	  title:'Line and Scatter Plot'
