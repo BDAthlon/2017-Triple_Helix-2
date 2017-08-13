@@ -3,6 +3,7 @@ from flask import render_template
 from flask import request
 import createblobs as createblobs
 import score as score
+#import playgame as playgame
 app = Flask("BioBlobs") #this is defininf our flak app
 
 @app.route("/")
@@ -25,9 +26,14 @@ def hello():
 def submittted():
 	form_data = request.form
 	simvalues = score.playgametest(form_data['param1'], form_data['param2'])
-	scores = score.scoretest()
-	trace1x= scores[0][0]
-	trace1y= scores[0][1]
+	scores = score.score()
+	print 'scores:' + str(scores)
+	try:
+		trace1x= scores[0][0]
+		trace1y= scores[0][1]
+	except:
+		trace1x=[]
+		trace1y=[]
 	trace2x= scores[1][0]
 	trace2y= scores[1][0]
 	trace3x= simvalues[0]

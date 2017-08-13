@@ -2,7 +2,7 @@
 <head>
   <title>BioBlobs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="plotly-latest.min"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/sandstone/bootstrap.min.css" rel="stylesheet" integrity="sha384-G3G7OsJCbOk1USkOY4RfeX1z27YaWrZ1YuaQ5tbuawed9IoreRDpWpTkZLXQfPm3" crossorigin="anonymous">
 </head>
 
@@ -51,7 +51,9 @@
   		</form>
   <div class="col-sm-6">
   		  <div id="myDiv"><!-- Plotly chart will be drawn inside this DIV -->
-  		  	{{trace1x, trace1y, trace2x, trace2y, trace3x, trace3y, trace4x, trace4y}}
+  		  </div>
+  		  <div>
+  		  {{trace1x, trace1y, trace2x, trace2y, trace3x, trace3y, trace4x, trace4y}}
   		  </div>
   </div>
   </div>
