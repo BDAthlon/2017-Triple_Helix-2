@@ -25,7 +25,7 @@ def hello():
 	return render_template("hello.html", trace1x=trace1x, trace1y=trace1y, trace2x=trace2x, trace2y=trace2y, trace3x=trace3x, trace3y=trace3y, trace4x=trace4x, trace4y=trace4y)
 
 
-@app.route("/signup", methods=["POST"])
+@app.route("/submit", methods=["POST"])
 def submittted():
 	currentdir = os.getcwd()
 	os.chdir(currentdir)
