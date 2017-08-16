@@ -6,13 +6,15 @@ import csv
 from numpy import genfromtxt
 import pandas as pd
 
-def scoretest():
-    hit_blobs, nothit_blobs = ([(5),(10)], [(10,15,20,25,30,35,40,45,50),(2,20,30,40,56,4,87,31,52)])
-    return hit_blobs, nothit_blobs
-
 def playgametest(param1, param2):
-    x = [(1,10,20,30,40,50),(2,3,4,20,40,43),(2,6,8,0,7,0)]
+    x = [(0,1,10,20,30,40,50),(0,10,100,150,180,200,250),(0,5,20,40,80,100,120)]
     return x
+
+def convert_to_integers(tuple):
+    newlist= list()
+    for number in tuple:
+        newlist.append(int(number))
+    return newlist
 
 def score():
     df_blobs=pd.read_csv('blobvalues.csv', sep=',',header=None)

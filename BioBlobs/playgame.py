@@ -8,11 +8,18 @@ import stochpy
 import numpy as np
 import csv
 import pandas as pd
+import score as score
+
 
 def playgametest(param1, param2):
     x = [(1,10,20,30,40,50),(2,3,4,20,40,43),(2,6,8,0,7,0)]
     return x
-    
+
+def convert_numpys_to_integers(list):
+    for i, number in enumerate(list):
+        list[i] = np.asscalar(number)
+    return list
+
 def playgame(currentdir,type,parameter1,parameter2):
     #parameter 1 determines final level
     #parameter 2 determines
@@ -68,7 +75,6 @@ def playgame(currentdir,type,parameter1,parameter2):
         mRNA_final = flatten(mRNA_final)
         protein_final = flatten(protein_final)
         simvalues = zip(time_final,mRNA_final,protein_final)
-
         return simvalues
 
     else:
