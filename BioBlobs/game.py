@@ -4,7 +4,7 @@ from flask import request
 import os
 import createblobs as createblobs
 import score as score
-#import playgame as playgame
+import playgame as playgame
 
 #import playgame as playgame
 app = Flask("BioBlobs") #this is defininf our flak app
@@ -32,7 +32,7 @@ def submittted():
 	form_data = request.form
 	print 'form submitted, data in form:'
 	print form_data
-	stochastic = form_data['stochastic']
+	stochastic = 1 #or 0 will get from form
 	scores = score.score()
 	simvalues = playgame.playgame(currentdir, stochastic, form_data['param1'], form_data['param2'])
 	print 'scores:' + str(scores)
