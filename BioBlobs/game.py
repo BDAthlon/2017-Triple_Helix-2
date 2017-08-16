@@ -2,11 +2,11 @@ from flask import Flask
 from flask import render_template
 from flask import request
 import os
+
 import createblobs as createblobs
 import score as score
-#import playgame as playgame
+import playgame as playgame
 
-#import playgame as playgame
 app = Flask("BioBlobs") #this is defininf our flak app
 
 @app.route("/")
