@@ -1,9 +1,10 @@
 from flask import Flask
 from flask import render_template
 from flask import request
+import os
 import createblobs as createblobs
 import score as score
-import playgame as playgame
+#import playgame as playgame
 
 #import playgame as playgame
 app = Flask("BioBlobs") #this is defininf our flak app
@@ -12,7 +13,7 @@ app = Flask("BioBlobs") #this is defininf our flak app
 def hello():
 	blobs = createblobs.createblobs(0)
 	blobxy = zip(*blobs)
-	print blobxy
+	print 'Random blob coordinates: ' + str(blobxy)
 	trace1x= blobxy[0]
 	trace1y= blobxy[1]
 	trace2x=[]
@@ -26,11 +27,14 @@ def hello():
 
 @app.route("/signup", methods=["POST"])
 def submittted():
+	currentdir = os.getcwd()
+	os.chdir(currentdir)
 	form_data = request.form
 	print 'form submitted, data in form:'
 	print form_data
+	stochastic = form_data['stochastic']
 	scores = score.score()
-	simvalues = playgame.playgame(form_data['param1'], form_data['param2'])
+	simvalues = playgame.playgame(currentdir, stochastic, form_data['param1'], form_data['param2'])
 	print 'scores:' + str(scores)
 	print 'simvalues:' + str(simvalues)
 	try:
