@@ -1,0 +1,11 @@
+# Web
+Flask
+
+# Numerical/plotting
+numpy
+matplotlib
+pandas
+
+# Biological simulations
+pysces
+stochpy
