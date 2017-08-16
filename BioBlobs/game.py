@@ -19,12 +19,14 @@ def hello():
 	trace3y=[]
 	trace4x=[]
 	trace4y=[]
-	return render_template("hello.html", trace1x=trace1x, trace1y=trace1y, trace2x=trace2x, trace2y=trace2y, trace3x=trace3x, trace3y = trace3y, trace4x=trace4x, trace4y = trace4y)
+	return render_template("hello.html", trace1x=trace1x, trace1y=trace1y, trace2x=trace2x, trace2y=trace2y, trace3x=trace3x, trace3y=trace3y, trace4x=trace4x, trace4y=trace4y)
 
 
 @app.route("/signup", methods=["POST"])
 def submittted():
 	form_data = request.form
+	print 'form submitted, data in form:'
+	print form_data
 	simvalues = score.playgametest(form_data['param1'], form_data['param2'])
 	scores = score.score()
 	print 'scores:' + str(scores)
@@ -40,10 +42,6 @@ def submittted():
 	trace3y= simvalues[1]
 	trace4x= simvalues[0]
 	trace4y= simvalues[2]
-	print 'form submitted, data in form:'
-	print form_data
-	test = createblobs.test(form_data['param1'],form_data['param2'])
-	return render_template("hello.html", trace1x=trace1x, trace1y=trace1y, trace2x=trace2x, trace2y=trace2x, trace3x=trace3x, trace3y = trace3y, trace4x=trace4x, trace4y = trace4y)
 
 app.run(
 	debug = True)
