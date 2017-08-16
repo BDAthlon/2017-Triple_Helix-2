@@ -40,10 +40,10 @@ def submittted():
 		trace2y=[1]
 	trace1x= score.convert_to_integers(scores[1][0])
 	trace1y= score.convert_to_integers(scores[1][1])
-	trace3x= simvalues[0]
-	trace3y= simvalues[1]
-	trace4x= simvalues[0]
-	trace4y= simvalues[2]
+	trace3x= score.convert_to_integers(simvalues[0])
+	trace3y= score.convert_to_integers(simvalues[1])
+	trace4x= score.convert_to_integers(simvalues[0])
+	trace4y= score.convert_to_integers(simvalues[2])
 
 	return render_template("hello.html", trace1x=trace1x, trace1y=trace1y, trace2x=trace2x, trace2y=trace2y, trace3x=trace3x, trace3y=trace3y, trace4x=trace4x, trace4y=trace4y)
 
