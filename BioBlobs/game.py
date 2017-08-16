@@ -36,7 +36,7 @@ def submittted():
 	stochastic = (form_data['stochastic'] == "true")
 	
 	scores = score.score()
-	simvalues = playgame.playgame(currentdir, stochastic, form_data['param1'], form_data['param2'])
+	simvalues = playgame.playgame(currentdir, stochastic, float(form_data['param1']), float(form_data['param2']))
 	print 'scores:' + str(scores)
 	print 'simvalues:' + str(simvalues)
 	try:
