@@ -27,8 +27,6 @@ def hello():
 
 @app.route("/submit", methods=["POST"])
 def submittted():
-	currentdir = os.getcwd()
-	os.chdir(currentdir)
 	form_data = request.form
 	print 'form submitted, data in form:'
 	print form_data
@@ -36,7 +34,7 @@ def submittted():
 	stochastic = (form_data['stochastic'] == "true")
 	
 	scores = score.score()
-	simvalues = playgame.playgame(currentdir, stochastic, float(form_data['param1']), float(form_data['param2']))
+	simvalues = playgame.playgame(os.getcwd(), stochastic, float(form_data['param1']), float(form_data['param2']))
 	print 'scores:' + str(scores)
 	print 'simvalues:' + str(simvalues)
 	try:

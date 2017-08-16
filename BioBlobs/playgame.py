@@ -1,6 +1,5 @@
 import os
 currentdir = os.getcwd()
-os.chdir(currentdir)
 import random
 import pysces
 import matplotlib.pyplot as plt
@@ -19,9 +18,8 @@ def playgame(currentdir,stochastic,parameter1,parameter2):
         #change directory
         
         smod = stochpy.SSA()
-        os.chdir(currentdir)
-        smod.Model(currentdir+'/mRNAproteinIulia.psc')
-        
+        smod.Model(os.path.join(currentdir, 'mRNAproteinIulia.psc'))
+
         #change parameters
         smod.ChangeParameter("Ksynmrna",parameter1)
         smod.ChangeParameter("Kdeg2",parameter2)
@@ -64,13 +62,11 @@ def playgame(currentdir,stochastic,parameter1,parameter2):
         mRNA_final = flatten(mRNA_final)
         protein_final = flatten(protein_final)
         simvalues = zip(time_final,mRNA_final,protein_final)
-        return simvalues
 
     else:
         #deterministic
-        os.chdir(currentdir)
-        print(currentdir+'/pysces_determ.psc')
-        mod = pysces.model('pysces_determ',dir=currentdir)
+        print(currentdir+'pysces_determ.psc')
+        mod = pysces.model('pysces_determ', dir=os.getcwd())
         #change params
         mod.Ksynmrna = parameter1
         mod.Kdeg2 = parameter2
@@ -91,7 +87,13 @@ def playgame(currentdir,stochastic,parameter1,parameter2):
         #get simulation values
         simvalues = mod.data_sim.getSpecies()
 #       print(mod.data_sim.getSpecies())
-        return simvalues
+
+    os.chdir(currentdir)
+    with open("simvalues.csv","wb") as f:
+        writer = csv.writer(f)
+        writer.writerows(simvalues)
+
+    return simvalues
 
 def flatten(l):
     flat_list =[]
@@ -100,15 +102,10 @@ def flatten(l):
             flat_list.append(item)
     return flat_list
 
+simvalues = playgame(currentdir, True, 50, 5)
 
-type = 0
 #sim_yvaluesmRNA, sim_yvaluesprotein = playgame(type)
 #print(sim_yvaluesmRNA, sim_yvaluesprotein,'\n')
-simvalues = playgame(currentdir,type,50,5)
-os.chdir(currentdir)
-with open("simvalues.csv","wb") as f:
-    writer = csv.writer(f)
-    writer.writerows(simvalues)
 #print simvalues
 
 
