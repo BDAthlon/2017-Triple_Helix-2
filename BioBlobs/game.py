@@ -3,7 +3,8 @@ from flask import render_template
 from flask import request
 import createblobs as createblobs
 import score as score
-import json
+import playgame as playgame
+
 #import playgame as playgame
 app = Flask("BioBlobs") #this is defininf our flak app
 
@@ -29,7 +30,7 @@ def submittted():
 	print 'form submitted, data in form:'
 	print form_data
 	scores = score.score()
-	simvalues = score.playgametest(form_data['param1'], form_data['param2'])
+	simvalues = playgame.playgame(form_data['param1'], form_data['param2'])
 	print 'scores:' + str(scores)
 	print 'simvalues:' + str(simvalues)
 	try:
