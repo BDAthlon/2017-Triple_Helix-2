@@ -1,6 +1,6 @@
+numpy==1.13.1+mkl
 pandas==0.20.3
 StochPy
 Flask==0.12.1
 matplotlib==2.0.2
-numpy==1.13.1+mkl
 pysces==0.9.3
