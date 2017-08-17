@@ -5,6 +5,7 @@ Flask
 
 # Numerical/plotting
 numpy
+scipy
 matplotlib
 pandas
 
