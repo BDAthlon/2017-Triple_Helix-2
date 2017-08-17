@@ -1,6 +1,6 @@
 <!doctype html>
 <head>
-  <title>BioBlobs</title>
+  <title>Blue Blobs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/sandstone/bootstrap.min.css" rel="stylesheet" integrity="sha384-G3G7OsJCbOk1USkOY4RfeX1z27YaWrZ1YuaQ5tbuawed9IoreRDpWpTkZLXQfPm3" crossorigin="anonymous">
@@ -8,8 +8,8 @@
 
 <body>
 <div class='jumbotron container text-center'>
-<h2>Kill the Blobs with the power of Biochemistry!</h2>
-<p> Load up the parameters and shoot! </p>
+<h2>Elliminate the Blue Blobs!</h2>
+<p> Load up the parameters for Gene Expression and shoot! </p>
 </div>
 
 <div class=container>
@@ -24,11 +24,11 @@
 		<h1>Parameters</h1>
 		<div class="row">
 		<form method='post' action='/submit'>
-		<label for=name>Parameter 1:</label>
+		<label for=name>Rate of mRNA syhtesis:</label>
 		<input type="number" name="param1" value="" required="required" autofocus="autofocus"/>
 		</div>
 		<div class="row">
-		<label for=name>Parameter 2:</label>
+		<label for=name>Rate of protein degradation:</label>
 		<input type="number" name="param2" value="" required="required" autofocus="autofocus"/>
 		<div>
 		
@@ -38,12 +38,12 @@
 <label class="custom-control custom-radio">
   <input id="radio1" name="stochastic" value="false" type="radio" class="custom-control-input" checked="true">
   <span class="custom-control-indicator"></span>
-  <span class="custom-control-description">Deterministic</span>
+  <span class="custom-control-description">Deterministic simulation</span>
 </label>
 <label class="custom-control deterministic-radio">
   <input id="radio2" name="stochastic" value="true" type="radio" class="custom-control-input">
   <span class="custom-control-indicator"></span>
-  <span class="custom-control-description">Stochastic</span>
+  <span class="custom-control-description">Stochastic simulation</span>
 </label>
 </div>
   </div>
@@ -69,25 +69,29 @@
 	 var trace1 = {
 	  x : mytrace1x,
 	  y : mytrace1y,
-	  mode: 'markers'
+	  mode: 'markers', 
+	  name: 'not hit blobs'
 	};
 
 	var trace2 = {
 	  x: mytrace2x,
 	  y: mytrace2y,
-	  mode: 'markers'
+	  mode: 'markers', 
+	  name: 'hit blobs'
 	};
 
 	var trace3 = {
 	  x: mytrace3x,
 	  y: mytrace3y,
-	  mode: 'lines'
+	  mode: 'lines',
+	  name: 'mRNA'
 	};
 
 	var trace4 = {
 	  x: mytrace4x,
 	  y: mytrace4y,
-	  mode: 'lines'
+	  mode: 'lines', 
+	  name: 'protein'
 	};
 
 	var data = [trace1, trace2, trace3, trace4];
