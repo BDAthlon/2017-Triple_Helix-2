@@ -1,20 +1,10 @@
 To do list for Ques 2
 
 Diff python files for:
-
 Blob generation function -> random (With a bias? Bias could be part of input). Return image file and dictionary for each blob.
-
 Play the game function -> takes parameters as input, whether stoch or determ, returns the list of coordinates for the plot that gets generated. Must be evenly spaced on xaxis
-
-
 Scoring function -> Obtain score by seeing if returned list of coordinates varies within a certain amount from blobs. Then plot the blobs (hit blobs in a different colour?) and simulation. 
-
-
-
-New game function - generate different blobs - reset button appear after a certain number of tries?
-
-
-switch for the Stochastic/Deterministic input. See link below. 
+New game function - generate different blobs - reset button appear after a certain number of tries? 
 
 generateblobs.py
 game.py
@@ -23,12 +13,31 @@ score.py
 Plotly javascript for plotting:
 https://plot.ly/javascript/line-charts/ 
 
-http://bootstrapswitch.com/ 
+HEROKU NOTES
+the requirements file is not enough. 
+the pysces does not like the default numpy version
+we would need the one with mkl but that is not listed in the versions avialable through pip
 
-def scoretest():
-    hit_blobs, nothit_blobs = ([(5),(10)], [(10,15,20,25,30,35,40,45,50),(2,20,30,40,56,4,87,31,52)])
-    return hit_blobs, nothit_blobs
+could use a numpy+mkl that is hosted online from here: http://www.lfd.uci.edu/~gohlke/pythonlibs/ 
+the pysces is from here too. 
 
-def playgametest(param1, param2):
-    x = [(1,10,20,30,40,50),(2,3,4,20,40,43),(2,6,8,0,7,0)]
-    return x
+but that was for windows... not sure what is right for Heroku and how to do that. 
+
+error message from Heroku:
+
+remote:        Collecting StochPy (from -r /tmp/build_67aae02ac9edf3233ed3ea1172de58c2/requirements.txt (line 2))
+remote:          Downloading StochPy-23.tar.gz (279kB)
+remote:            Complete output from command python setup.py egg_info:
+remote:            No module named numpy.distutils.core
+remote:            StochPy requires NumPy
+remote:
+remote:            See http://numpy.scipy.org/ for more information about NumPy
+remote:
+remote:            ----------------------------------------
+remote:        Command "python setup.py egg_info" failed with error code 255 in /tmp/pip-build-aeLsxC/StochPy/
+remote:  !     Push rejected, failed to compile Python app.
+remote:
+remote:  !     Push failed
+remote: Verifying deploy...
+remote:
+remote: !       Push rejected to blooming-atoll-61784.
