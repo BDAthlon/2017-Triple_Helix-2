@@ -1,0 +1,106 @@
+<!doctype html>
+<head>
+  <title>Blue Blobs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/sandstone/bootstrap.min.css" rel="stylesheet" integrity="sha384-G3G7OsJCbOk1USkOY4RfeX1z27YaWrZ1YuaQ5tbuawed9IoreRDpWpTkZLXQfPm3" crossorigin="anonymous">
+</head>
+
+<body>
+<div class='jumbotron container text-center'>
+<h2>Elliminate the Blue Blobs!</h2>
+<p> Load up the parameters for Gene Expression and shoot! </p>
+</div>
+
+<div class=container>
+ <div class="row">
+  <div class="col-sm-4">
+  		{% if 4 <= 5 %}
+		{% else %}
+		<h2> Thanks, your score is .. {{score}} ! </h2>
+		{% endif %}
+
+		<div id=contact-form></div>
+		<h1>Parameters</h1>
+		<div class="row">
+		<form method='post' action='/submit'>
+		<label for=name>Rate of mRNA syhtesis:</label>
+		<input type="number" name="param1" value="" required="required" autofocus="autofocus"/>
+		</div>
+		<div class="row">
+		<label for=name>Rate of protein degradation:</label>
+		<input type="number" name="param2" value="" required="required" autofocus="autofocus"/>
+		<div>
+		
+		</div>
+		</div>
+<div class="row">
+<label class="custom-control custom-radio">
+  <input id="radio1" name="stochastic" value="false" type="radio" class="custom-control-input" checked="true">
+  <span class="custom-control-indicator"></span>
+  <span class="custom-control-description">Deterministic simulation</span>
+</label>
+<label class="custom-control deterministic-radio">
+  <input id="radio2" name="stochastic" value="true" type="radio" class="custom-control-input">
+  <span class="custom-control-indicator"></span>
+  <span class="custom-control-description">Stochastic simulation</span>
+</label>
+</div>
+  </div>
+  		<div class="col-sm-2"><input type="submit" value="Submit" id="submit-button" class ="btn btn-warning center-block" /></div>
+  		</form>
+  <div class="col-sm-6">
+  		  <div id="myDiv"><!-- Plotly chart will be drawn inside this DIV -->
+  		  </div>
+  </div>
+  </div>
+</div> 
+
+<script>
+	 var mytrace1x = {{ trace1x|tojson }};
+	 var mytrace1y = {{ trace1y|tojson }};
+	 var mytrace2x = {{ trace2x|tojson }};
+	 var mytrace2y = {{ trace2y|tojson }};
+	 var mytrace3x = {{ trace3x|tojson }};
+	 var mytrace3y = {{ trace3y|tojson }};
+	 var mytrace4x = {{ trace4x|tojson }};
+	 var mytrace4y = {{ trace4y|tojson }};
+
+	 var trace1 = {
+	  x : mytrace1x,
+	  y : mytrace1y,
+	  mode: 'markers', 
+	  name: 'not hit blobs'
+	};
+
+	var trace2 = {
+	  x: mytrace2x,
+	  y: mytrace2y,
+	  mode: 'markers', 
+	  name: 'hit blobs'
+	};
+
+	var trace3 = {
+	  x: mytrace3x,
+	  y: mytrace3y,
+	  mode: 'lines',
+	  name: 'mRNA'
+	};
+
+	var trace4 = {
+	  x: mytrace4x,
+	  y: mytrace4y,
+	  mode: 'lines', 
+	  name: 'protein'
+	};
+
+	var data = [trace1, trace2, trace3, trace4];
+
+	var layout = {
+	  title:'Line and Scatter Plot'
+	};
+
+	Plotly.newPlot('myDiv', data, layout);
+  </script>
+
+</body>

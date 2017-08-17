@@ -1,3 +1,5 @@
+Jinja2==2.9.5 
+
 # Web
 Flask
 

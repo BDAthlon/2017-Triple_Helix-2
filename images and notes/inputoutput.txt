@@ -1,0 +1,9 @@
+createblobs input: 1 or 0
+If 1, plot with bias
+output: a list of blob coordinates
+
+playgame input: boolean,param1,param2
+boolean: if 1, stochastic; if 0, deterministic
+param1: rate of mRNA synthesis
+param2: protein degradation
+output: csv file

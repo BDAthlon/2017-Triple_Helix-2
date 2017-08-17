@@ -1,8 +1,8 @@
-# PySCeS test input file
-# Simple linear pathway (2004)
+# Stochastic Simulation Algorithm input file
+# --> mRNA -->
+# --> protein -->
 
-#FIX: mRNA protein
-
+# Reactions
 R1:
     mRNA > {2} mRNA
     Ksynmrna
@@ -19,6 +19,7 @@ R4:
     protein > $pool
     Kdeg2*protein
 
+ 
 # Fixed species
  
 # Variable species
@@ -31,3 +32,4 @@ Kdeg1 = 0.1
 
 Ksynprotein = 0.3
 Kdeg2 = 0.6
+
