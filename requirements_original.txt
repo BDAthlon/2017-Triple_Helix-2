@@ -1,0 +1,14 @@
+Jinja2==2.9.5 
+
+# Web
+Flask
+
+# Numerical/plotting
+numpy==1.13.1
+scipy
+matplotlib
+pandas
+
+# Biological simulations
+pysces
+stochpy

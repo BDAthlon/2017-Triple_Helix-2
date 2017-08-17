@@ -1,14 +1,6 @@
-Jinja2==2.9.5 
-
-# Web
-Flask
-
-# Numerical/plotting
-numpy==1.13.1
-scipy
-matplotlib
-pandas
-
-# Biological simulations
-pysces
-stochpy
+pandas==0.20.3
+StochPy==2.3
+Flask==0.12.1
+matplotlib==2.0.2
+numpy==1.13.1+mkl
+pysces==0.9.3
